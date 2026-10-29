@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Diagramador ER | Início</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="corpo_todo">
+
+        <header class="barra_superior">
+
+            <div class="nome_app">
+
+                <h1>
+                    <i class="fa-solid fa-database" aria-hidden="true"></i>
+                    Diagramador ER
+                </h1>
+
+            </div>
+
+            <form class="barra_pesquisa" role="search">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+
+                <input
+                    type="search"
+                    id="pesquisa_projetos"
+                    name="pesquisa_projetos"
+                    aria-label="Pesquisar projetos por nome ou data da última modificação"
+                    placeholder="Pesquisar projetos por nome ou data..."
+                >
+            </form>
+
+            <div class="botao_upload">
+
+                <button type="button" id="botao_upload">
+                    <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                    Abrir arquivos / Upload
+                </button>
+
+                <input
+                    type="file"
+                    id="arquivo_projeto"
+                    accept=".json,application/json"
+                    hidden
+                >
+
+            </div>
+
+        </header>
+
+        <main>
+
+            <section class="informacoes_meio">
+
+                <div class="secao_apresentacao">
+
+                    <div class="texto_apresentacao">
+                        <h2>Diagramador ER</h2>
+
+                        <p>
+                            O Diagramador ER é uma ferramenta desenvolvida para
+                            facilitar a criação visual de diagramas de banco de dados.
+                            Com ele, você pode organizar tabelas, definir colunas
+                            e estabelecer relacionamentos de forma simples e intuitiva,
+                            além de gerar automaticamente o código SQL correspondente
+                            ao seu projeto.
+                        </p>
+
+                    </div>
+
+                    <div class="imagem_apresentacao">
+
+                        <img
+                            src="img/diagrama-exemplo.png"
+                            alt="Exemplo de duas tabelas de banco de dados conectadas por um relacionamento"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="parte_inferior">
+
+                <h2>
+                    <i class="fa-solid fa-folder" aria-hidden="true"></i>
+                    Seus projetos
+                </h2>
+
+                <div class="galeria_projetos">
+
+                    <button type="button" class="criar_projeto" id="criar_projeto">
+
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+
+                        <h3>Criar novo projeto</h3>
+
+                        <p>Começar um diagrama do zero</p>
+
+                    </button>
+
+                    <article class="projeto_feito">
+
+                        <div class="previsualizacao_projeto">
+
+                            <img
+                                src="img/previa-projeto.png"
+                                alt="Pré-visualização do diagrama do projeto"
+                            >
+
+                        </div>
+
+                        <div class="informacoes_projeto">
+
+                            <h3>Título do projeto</h3>
+
+                            <p>
+                                Última modificação:
+                                <time datetime="2026-10-28">28/10/2026</time>
+                            </p>
+                            
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
