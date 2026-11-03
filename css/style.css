@@ -1,0 +1,177 @@
+/* CONFIGURAÇÃO GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* BARRA SUPERIOR */
+.barra_superior {
+    display: grid;
+    grid-template-columns: 1fr minmax(250px, 40%) 1fr;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+    min-height: 95px;
+    padding: 15px 30px;
+
+    background-color: #031D3B;
+    color: #F5F7FF;
+    font-size: 18px;
+
+    border-bottom: 1px solid #104C91;
+}
+
+/* NOME DO APLICATIVO */
+.nome_app {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #F5F7FF;
+    white-space: nowrap;
+}
+
+.nome_app i,
+.nome_app b {
+    color: #2678FF;
+}
+
+/* BARRA DE PESQUISA */
+.barra_pesquisa {
+    position: relative;
+    width: 100%;
+    color: #B9D0F2;
+}
+
+.barra_pesquisa input {
+    width: 100%;
+    height: 50px;
+    padding: 0 45px 0 20px;
+
+    background-color: #062650;
+    color: #F5F7FF;
+
+    border: 1px solid #104C91;
+    border-radius: 25px;
+
+    font-size: 15px;
+    outline: none;
+}
+
+.barra_pesquisa input:focus {
+    border-color: #2678FF;
+}
+
+.barra_pesquisa input::placeholder {
+    color: #B9D0F2;
+}
+
+.barra_pesquisa i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+
+    font-size: 20px;
+    pointer-events: none;
+}
+
+/* BOTÃO DE UPLOAD */
+.botao_upload {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.botao_upload button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 50px;
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: #1769FF;
+    color: #FFFFFF;
+
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.botao_upload button:hover {
+    background-color: #2678FF;
+    transform: translateY(-2px);
+}
+
+.botao_upload button i {
+    font-size: 20px;
+}
+
+/* SEÇÃO DE APRESENTAÇÃO */
+.secao_apresentacao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    width: 100%;
+    padding: 40px 4%;
+
+    background-color: #00152F;
+    line-height: 1.8;
+}
+
+/* TEXTO DE APRESENTAÇÃO */
+.texto_apresentacao {
+    flex: 1;
+    min-width: 0;
+}
+
+.texto_apresentacao h2 {
+    margin: 0 0 15px;
+    
+    color: #F5F7FF;
+    font-size: 35px;
+    line-height: 1.3;
+}
+
+.texto_apresentacao b {
+    color: #2678FF;
+}
+
+.texto_apresentacao p {
+    max-width: 650px;
+    margin: 0;
+
+    color: #B9D0F2;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* IMAGEM DE APRESENTAÇÃO */
+.imagem_apresentacao {
+    flex: 0 1 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem_apresentacao img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
