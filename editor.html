@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="editor.html">
+    
+    <title>Editor</title>
+</head>
+<body>
+    
+    <div class="barra_superior">
+        <h1 class="titulo">Diagramador ER</h1>
+        <h3 class="sub_titulo">Desenhe seu banco de dados de forma visual.</h3>
+
+        <button type="button" class="b_desfazer">Desfazer</button>
+        <button type="button" class="b_refazer">Refazer</button>
+        <button type="button" class="gerar_sql">Gerar SQL</button>
+        <button type="button" class="b_configuracoes"></button>
+    </div>
+
+    <div class="barra_esquerda">
+        <div class="ferramentas">
+            <p class="t_principal_1">Ferramentas</p>
+            <button type="button" class="ad_tabelas">Adicionar Tabelas</button>
+
+            <div class="relacoes">
+                <button type= "button" class="relacao_1p1">Relação 1:1</button>
+                <button type="button"  class="relacao_1pN">Relação 1:N</button>
+                <button type="button" class="relacao_NpM">Relaçao N:M</button>
+            </div> 
+        </div>
+        
+        <div class="acoes">
+            <p class="t_principal_2">Ações</p>
+            <div class="b_acoes">
+                <button type="button" class="selecionar">Selecionar</button>
+                <button type="button" class="mover">Mover</button>
+                <button type="button" class="excluir">Excluir</button>
+            </div>
+        </div>
+
+        <div class="dica">
+            <p>Arraste as tabelas pela tela e conecte os campos para criar relações. Depois clique em "Gerar SQL" para obter o script</p>
+        </div>
+    </div>
+
+    <div class="barra_direita">
+        <p class="t_principal_2">Script SQL</p>
+        <div class="campo_script">
+            <button type="button" class="botao_copiar">Copiar</button>
+
+            <!--Eu não faço ideia de como fazer essa parte do script, meu babadinho-->
+
+        </div>
+    </div>
+
+    <div class="mesa">
+
+        <div class="tabela_usuario">
+            <div class="t_tabela_usuario">
+                <h3>Usuários</h3>
+            </div>
+
+            <ul class="dados_tab_usuario">
+                <li>
+                    <span class="campo_nome">id</span>
+                    <span class="tipo_dado">INT</span>
+                    <span></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+</html>
