@@ -1,75 +1,239 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="editor.html">
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="css/editor.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <title>Editor</title>
+   <title>Editor</title>
 </head>
 <body>
-    
-    <div class="barra_superior">
-        <h1 class="titulo">Diagramador ER</h1>
-        <h3 class="sub_titulo">Desenhe seu banco de dados de forma visual.</h3>
+  
+   <div class="barra_superior">
+       <h1></h1><i class="fa-solid fa-database" aria-hidden="true"></i>
+                    Diagramador <b>ER</b>
+        </h1>
+       <h3 class="sub_titulo">Desenhe seu banco de dados de forma visual.</h3>
 
-        <button type="button" class="b_desfazer">Desfazer</button>
-        <button type="button" class="b_refazer">Refazer</button>
-        <button type="button" class="gerar_sql">Gerar SQL</button>
-        <button type="button" class="b_configuracoes"></button>
-    </div>
 
-    <div class="barra_esquerda">
-        <div class="ferramentas">
-            <p class="t_principal_1">Ferramentas</p>
-            <button type="button" class="ad_tabelas">Adicionar Tabelas</button>
+       <button type="button" class="b_desfazer"><i class="fa-solid fa-rotate-left"></i>Desfazer</button>
+       <button type="button" class="b_refazer"><i class="fa-solid fa-rotate-right"></i>Refazer</button>
+       <button type="button" class="gerar_sql"><i class="fa-solid fa-code"></i>Gerar SQL</button>
+       <button type="button" class="b_configuracoes"><i class="fa-solid fa-gear"></i></button>
+   </div>
 
-            <div class="relacoes">
-                <button type= "button" class="relacao_1p1">Relação 1:1</button>
-                <button type="button"  class="relacao_1pN">Relação 1:N</button>
-                <button type="button" class="relacao_NpM">Relaçao N:M</button>
-            </div> 
+
+   <div class="barra_esquerda">
+       <div class="ferramentas">
+           <p class="t_principal_1">Ferramentas</p>
+           <button type="button" class="ad_tabelas"><i class="fa-solid fa-plus"></i>Adicionar Tabelas</button>
+
+
+           <div class="relacoes">
+               <button type= "button" class="relacao_1p1">Relação 1:1</button>
+               <button type="button"  class="relacao_1pN">Relação 1:N</button>
+               <button type="button" class="relacao_NpM">Relação N:M</button>
+           </div>
+       </div>
+      
+       <div class="acoes">
+           <p class="t_principal_2">Ações</p>
+           <div class="b_acoes">
+               <button type="button" class="selecionar"><i class="fa-solid fa-mouse-pointer"></i>Selecionar</button>
+               <button type="button" class="mover"><i class="fa-solid fa-up-down-left-right"></i>Mover</button>
+               <button type="button" class="excluir"><i class="fa-solid fa-trash-can"></i>Excluir</button>
+           </div>
+       </div>
+
+
+       <div class="dica">
+            <h3>Dica</h3>
+           <p>Arraste as tabelas pela tela e conecte os campos para criar relações. Depois clique em "Gerar SQL" para obter o script</p>
+       </div>
+   </div>
+
+
+   <div class="barra_direita">
+       <p class="t_principal_2">Script SQL</p>
+       <div class="campo_script">
+           <button type="button" class="botao_copiar">Copiar</button>
+
+
+           <!--Eu nÃ£o faço ideia de como fazer essa parte do script, meu babadinho-->
+
+
+       </div>
+   </div>
+
+
+   <div class="mesa">
+
+
+       <div class="tabela_usuario">
+           <div class="t_tabela_usuario">
+               <h3>Usuarios</h3>
+               <button type="button" class="b_excluir_tabela">X</button>
+           </div>
+
+
+           <ul class="dados_tab_usuario">
+               <li>
+                   <i class="fa-solid fa-key"></i>
+                   <span class="nome_campo">id</span>
+                   <span class="tipo_dado">INT</span>
+                   <span class="marcacao">PK</span>
+               </li>
+
+
+               <li>
+                    <span class="nome_campo">nome</span>
+                    <span class="tipo_dado">VARCHAR (100)</span>
+                    <span class="marcacao"></span>
+               </li>
+
+
+               <li>
+                    <span class="nome_campo">email</span>
+                    <span class="tipo_dado">VARCHAR (100)</span>
+                    <span class="marcacao">UNIQUE</span>
+               </li>
+
+
+               <li>
+                    <span class="nome_campo">senha</span>
+                    <span class="tipo_dado">VARCHAR (255)</span>
+                    <span class="marcacao"></span>
+               </li>
+
+
+               <li>
+                    <span class="nome_campo">data_cadastro</span>
+                    <span class="tipo_dado">TIMESTAMP</span>
+                    <span class="marcacao"></span>
+               </li>
+           </ul>
+       </div>
+
+       <div class="tabela_posts">
+            <div class="t_tabela_posts">
+               <h3>Posts</h3>
+               <button type="button" class="b_excluir_tabela">X</button>
+           </div>
+
+
+           <ul class="dados_tab_posts">
+            <li>
+                <i class="fa-solid fa-key"></i>
+                <span class="nome_campo">id</span>
+                <span class="tipo_dado">INT</span>
+                <span class="marcacao">PK</span>
+            </li>
+
+
+            <li>
+                <span class="nome_campo">titulo</span>
+                <span class="tipo_dado">VARCHAR (100)</span>
+                <span class="marcacao"></span>
+            </li>
+
+
+            <li>
+                <span class="nome_campo">conteudo</span>
+                <span class="tipo_dado">TEXT</span>
+                <span class="marcacao"></span>
+            </li>
+
+
+            <li>
+                <span class="nome_campo">data_publicação</span>
+                <span class="tipo_dado">TIMESTAMP</span>
+                <span class="marcacao"></span>
+            </li>
+
+
+            <li>
+                <span class="nome_campo">usuario_id</span>
+                <span class="tipo_dado">INT</span>
+                <span class="marcacao">FK</span>
+            </li>
+           </ul>
         </div>
-        
-        <div class="acoes">
-            <p class="t_principal_2">Ações</p>
-            <div class="b_acoes">
-                <button type="button" class="selecionar">Selecionar</button>
-                <button type="button" class="mover">Mover</button>
-                <button type="button" class="excluir">Excluir</button>
-            </div>
+
+
+        <div class="tabela_comentarios">
+            <div class="t_tabela_comentarios">
+               <h3>Comentários</h3>
+               <button type="button" class="b_excluir_tabela">X</button>
+           </div>
+
+
+           <ul>
+            <li>
+                <i class="fa-solid fa-key"></i>
+                <span class="nome_campo">id</span>
+                <span class="tipo_dado">INT</span>
+                <span class="marcacao">PK</span>
+            </li>
+
+
+            <li>
+                <span class="nome_campo">conteudo</span>
+                <span class="tipo_dado">TEXT</span>
+                <span class="marcacao"></span>
+            </li>
+
+            <li>
+                <span class="nome_campo">data_criacao</span>
+                <span class="tipo_dado">TIMESTAMP</span>
+                <span class="marcacao"></span>
+            </li>
+
+            <li>
+                <span class="nome_campo">pst_id</span>
+                <span class="tipo_dado">INT</span>
+                <span class="marcacao">FK</span>
+            </li>
+
+            <li>
+                <span class="nome_campo">usuario_id</span>
+                <span class="tipo_dado">INT</span>
+                <span class="marcacao">FK</span>
+            </li>
+           </ul>
         </div>
 
-        <div class="dica">
-            <p>Arraste as tabelas pela tela e conecte os campos para criar relações. Depois clique em "Gerar SQL" para obter o script</p>
+        <div class="tabela_categorias">
+            <div class="t_tabela_categorias">
+               <h3>Categorias</h3>
+               <button type="button" class="b_excluir_tabela">X</button>
+           </div>
+
+
+           <ul>
+            <li>
+                <i class="fa-solid fa-key"></i>
+                <span class="nome_campo">id</span>
+                <span class="tipo_dado">INT</span>
+                <span class="marcacao">PK</span>
+            </li>
+
+            <li>
+                <span class="nome_campo">nome</span>
+                <span class="tipo_dado">VARCHAR (100)</span>
+                <span class="marcacao"></span>
+            </li>
+
+            <li>
+                <span class="nome_campo">descricao</span>
+                <span class="tipo_dado">TEXT</span>
+                <span class="marcacao"></span>
+            </li>
+           </ul>
         </div>
-    </div>
 
-    <div class="barra_direita">
-        <p class="t_principal_2">Script SQL</p>
-        <div class="campo_script">
-            <button type="button" class="botao_copiar">Copiar</button>
+   </div>
 
-            <!--Eu não faço ideia de como fazer essa parte do script, meu babadinho-->
 
-        </div>
-    </div>
-
-    <div class="mesa">
-
-        <div class="tabela_usuario">
-            <div class="t_tabela_usuario">
-                <h3>Usuários</h3>
-            </div>
-
-            <ul class="dados_tab_usuario">
-                <li>
-                    <span class="campo_nome">id</span>
-                    <span class="tipo_dado">INT</span>
-                    <span></span>
-                </li>
-            </ul>
-        </div>
-    </div>
 
 
 </body>

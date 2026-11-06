@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #030816;
+    color: #ffffff;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 56px 1fr;
+    grid-template-columns: 240px 1fr 340px;
+    grid-template-areas:
+        "topbar topbar topbar"
+        "sidebar mesa scriptbar";
+    overflow: hidden;
+}
+
+
+.barra_superior {
+    grid-area: topbar;
+    background-color: #070f26;
+    border-bottom: 1px solid #111e38;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 16px;
+}
+
+.barra_superior i.fa-database {
+    color: #38bdf8;
+    font-size: 1.2rem;
+}
+
+.titulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.sub_titulo {
+    font-size: 0.82rem;
+    color: #64748b;
+    font-weight: 400;
+    margin-right: auto;
+    border-left: 1px solid #1e293b;
+    padding-left: 16px;
+}
+
+.barra_superior button {
+    background-color: #0d1b3a;
+    color: #94a3b8;
+    border: 1px solid #1e293b;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.barra_superior button:hover {
+    background-color: #172a54;
+    color: #ffffff;
+}
+
+.barra_superior .gerar_sql {
+    background-color: #2563eb;
+    border-color: #3b82f6;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.barra_superior .gerar_sql:hover {
+    background-color: #1d4ed8;
+}
+
+.b_configuracoes {
+    padding: 8px 10px !important;
+}
+
+
+.barra_esquerda {
+    grid-area: sidebar;
+    background-color: #070f26;
+    border-right: 1px solid #111e38;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.t_principal_1, .t_principal_2 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f8fafc;
+    margin-bottom: 12px;
+}
+
+.ferramentas, .acoes {
+    display: flex;
+    flex-direction: column;
+}
+
+.relacoes, .b_acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.barra_esquerda button {
+    background-color: transparent;
+    color: #94a3b8;
+    border: 1px solid transparent;
+    padding: 10px 12px;
+    border-radius: 6px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+}
+
+.barra_esquerda button i {
+    width: 16px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.barra_esquerda button:hover {
+    background-color: #0d1b3a;
+    color: #ffffff;
+    border-color: #1e293b;
+}
+
+.ad_tabelas {
+    background-color: #2563eb !important;
+    border-color: #3b82f6 !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    justify-content: center;
+    padding: 11px !important;
+}
+
+.ad_tabelas:hover {
+    background-color: #1d4ed8 !important;
+}
+
+/* Bloco Dica */
+.dica {
+    margin-top: auto;
+    background-color: #07132e;
+    border: 1px solid #132448;
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.dica h3 {
+    font-size: 0.82rem;
+    color: #38bdf8;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dica p {
+    font-size: 0.75rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+
+.mesa {
+    grid-area: mesa;
+    background-color: #030816;
+    /* Grid de fundo sutil igual à imagem */
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+    position: relative;
+    padding: 40px;
+    overflow: auto;
+}
+
+.mesa > div {
+    position: absolute; /* Permite mover livremente no canvas */
+    width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #050c1e;
+    border: 2px solid transparent;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+}
+
+
+.tabela_usuario { top: 60px; left: 100px; border-color: #2563eb; }
+.tabela_posts { top: 80px; left: 500px; border-color: #10b981; }
+.tabela_comentarios { top: 320px; left: 160px; border-color: #8b5cf6; }
+.tabela_categorias { top: 390px; left: 500px; border-color: #f97316; }
+
+
+[class^="t_tabela_"] {
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+[class^="t_tabela_"] h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-right: auto;
+}
+
+[class^="t_tabela_"] i {
+    font-size: 0.9rem;
+}
+
+.t_tabela_usuario { background-color: #2563eb; }
+.t_tabela_posts { background-color: #10b981; }
+.t_tabela_comentarios { background-color: #8b5cf6; }
+.t_tabela_categorias { background-color: #f97316; }
+
+.b_excluir_tabela {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.b_excluir_tabela:hover {
+    color: #ffffff;
+}
+
+/* Listagem dos Campos */
+.mesa ul {
+    list-style: none;
+    padding: 6px 0;
+}
+
+.mesa li {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    font-size: 0.78rem;
+    gap: 8px;
+}
+
+.nome_campo {
+    color: #e2e8f0;
+    margin-right: auto;
+}
+
+.tipo_dado {
+    color: #64748b;
+    font-size: 0.72rem;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Badges PK, FK e UNIQUE */
+.marcacao {
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.marcacao:empty {
+    display: none;
+}
+
+
+.tabela_usuario .marcacao { background-color: #1d4ed8; color: #ffffff; }
+.tabela_usuario li:has(.marcacao:contains("UNIQUE")) .marcacao,
+.marcacao:contains("UNIQUE") { background-color: #7c3aed; color: #ffffff; }
+
+.tabela_posts .marcacao { background-color: #059669; color: #ffffff; }
+.tabela_comentarios .marcacao { background-color: #059669; color: #ffffff; }
+.tabela_comentarios li:first-child .marcacao { background-color: #2563eb; }
+
+.tabela_categorias .marcacao { background-color: #2563eb; color: #ffffff; }
+
+.mesa li .fa-key {
+    color: #eab308;
+    font-size: 0.75rem;
+}
+
+
+.barra_direita {
+    grid-area: scriptbar;
+    background-color: #070f26;
+    border-left: 1px solid #111e38;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.barra_direita .t_principal_2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #f8fafc;
+}
+
+.campo_script {
+    background-color: #030816;
+    border: 1px solid #111e38;
+    border-radius: 8px;
+    flex: 1;
+    position: relative;
+    padding: 16px;
+    margin-top: 10px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    overflow-y: auto;
+}
+
+.botao_copiar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #0d1b3a;
+    color: #94a3b8;
+    border: 1px solid #1e293b;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.botao_copiar:hover {
+    color: #ffffff;
+    background-color: #172a54;
+}
