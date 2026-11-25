@@ -1,133 +1,156 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
 
+/* CONFIGURAÇÃO GLOBAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #030816;
-    color: #ffffff;
+    background-color: #031D3B;
+    color: #F5F7FF;
     height: 100vh;
+
     display: grid;
     grid-template-rows: 56px 1fr;
     grid-template-columns: 240px 1fr 340px;
+
     grid-template-areas:
         "topbar topbar topbar"
         "sidebar mesa scriptbar";
+
     overflow: hidden;
 }
 
-
+/* BARRA SUPERIOR */
 .barra_superior {
     grid-area: topbar;
-    background-color: #070f26;
-    border-bottom: 1px solid #111e38;
+    background-color: #031D3B;
+    border-bottom: 1px solid #104C91;
+
     display: flex;
     align-items: center;
     padding: 0 20px;
     gap: 16px;
 }
 
-.barra_superior i.fa-database {
-    color: #38bdf8;
+.barra_superior .fa-database {
+    color: #2678FF;
     font-size: 1.2rem;
 }
 
 .titulo {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #F5F7FF;
 }
 
 .sub_titulo {
     font-size: 0.82rem;
-    color: #64748b;
+    color: #B9D0F2;
     font-weight: 400;
     margin-right: auto;
-    border-left: 1px solid #1e293b;
+
+    border-left: 1px solid #104C91;
     padding-left: 16px;
 }
 
+
+/* BOTÕES SUPERIORES */
 .barra_superior button {
-    background-color: #0d1b3a;
-    color: #94a3b8;
-    border: 1px solid #1e293b;
+    background-color: #062650;
+    color: #B9D0F2;
+    border: 1px solid #104C91;
+
     padding: 8px 14px;
     border-radius: 6px;
+
     cursor: pointer;
     font-size: 0.82rem;
+
     display: flex;
     align-items: center;
     gap: 8px;
+
     transition: all 0.2s;
 }
 
 .barra_superior button:hover {
-    background-color: #172a54;
-    color: #ffffff;
+    background-color: #104C91;
+    color: #FFFFFF;
 }
 
 .barra_superior .gerar_sql {
-    background-color: #2563eb;
-    border-color: #3b82f6;
-    color: #ffffff;
-    font-weight: 500;
+    background-color: #1769FF;
+    border-color: #2678FF;
+    color: #FFFFFF;
+    font-weight: 600;
 }
 
 .barra_superior .gerar_sql:hover {
-    background-color: #1d4ed8;
+    background-color: #2678FF;
 }
 
 .b_configuracoes {
     padding: 8px 10px !important;
 }
 
-
+/* BARRA LATERAL ESQUERDA */
 .barra_esquerda {
     grid-area: sidebar;
-    background-color: #070f26;
-    border-right: 1px solid #111e38;
+    background-color: #031D3B;
+    border-right: 1px solid #104C91;
+
     padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+
     overflow-y: auto;
 }
 
-.t_principal_1, .t_principal_2 {
+/* TÍTULOS DAS SEÇÕES */
+.t_principal_1,
+.t_principal_2 {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #f8fafc;
+    color: #F5F7FF;
     margin-bottom: 12px;
 }
 
-.ferramentas, .acoes {
+.ferramentas,
+.acoes {
     display: flex;
     flex-direction: column;
 }
 
-.relacoes, .b_acoes {
+.relacoes,
+.b_acoes {
     display: flex;
     flex-direction: column;
     gap: 6px;
     margin-top: 10px;
 }
 
+/* BOTÕES DA BARRA ESQUERDA */
 .barra_esquerda button {
     background-color: transparent;
-    color: #94a3b8;
+    color: #B9D0F2;
     border: 1px solid transparent;
+
     padding: 10px 12px;
     border-radius: 6px;
+
     text-align: left;
     cursor: pointer;
     font-size: 0.85rem;
+
     display: flex;
     align-items: center;
     gap: 12px;
+
     transition: all 0.2s;
 }
 
@@ -138,37 +161,40 @@ body {
 }
 
 .barra_esquerda button:hover {
-    background-color: #0d1b3a;
-    color: #ffffff;
-    border-color: #1e293b;
+    background-color: #062650;
+    color: #FFFFFF;
+    border-color: #104C91;
 }
 
+/* BOTÃO ADICIONAR TABELAS */
 .ad_tabelas {
-    background-color: #2563eb !important;
-    border-color: #3b82f6 !important;
-    color: #ffffff !important;
-    font-weight: 500;
+    background-color: #1769FF !important;
+    border-color: #2678FF !important;
+    color: #FFFFFF !important;
+    font-weight: 600;
+
     justify-content: center;
     padding: 11px !important;
 }
 
 .ad_tabelas:hover {
-    background-color: #1d4ed8 !important;
+    background-color: #2678FF !important;
 }
 
-/* Bloco Dica */
+/* BLOCO DICA */
 .dica {
     margin-top: auto;
-    background-color: #07132e;
-    border: 1px solid #132448;
+    background-color: #062650;
+    border: 1px solid #104C91;
     border-radius: 8px;
     padding: 14px;
 }
 
 .dica h3 {
     font-size: 0.82rem;
-    color: #38bdf8;
+    color: #2678FF;
     margin-bottom: 8px;
+
     display: flex;
     align-items: center;
     gap: 8px;
@@ -176,43 +202,68 @@ body {
 
 .dica p {
     font-size: 0.75rem;
-    color: #64748b;
+    color: #B9D0F2;
     line-height: 1.5;
 }
 
-
+/* ÁREA DE TRABALHO */
 .mesa {
     grid-area: mesa;
-    background-color: #030816;
-    /* Grid de fundo sutil igual à imagem */
-    background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-color: #00152F;
+
+    /* Grade de fundo */
+    background-image:
+        linear-gradient(to right, rgba(185, 208, 242, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(185, 208, 242, 0.04) 1px, transparent 1px);
+
     background-size: 24px 24px;
+
     position: relative;
     padding: 40px;
     overflow: auto;
 }
 
+/* CARTÕES DAS TABELAS */
 .mesa > div {
-    position: absolute; /* Permite mover livremente no canvas */
+    position: absolute;
     width: 250px;
+
     border-radius: 10px;
     overflow: hidden;
-    background-color: #050c1e;
-    border: 2px solid transparent;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+
+    background-color: #062650;
+    border: 2px solid #104C91;
+
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.35);
 }
 
+/* POSICIONAMENTO DAS TABELAS DE EXEMPLO */
+.tabela_usuario {
+    top: 60px;
+    left: 100px;
+}
 
-.tabela_usuario { top: 60px; left: 100px; border-color: #2563eb; }
-.tabela_posts { top: 80px; left: 500px; border-color: #10b981; }
-.tabela_comentarios { top: 320px; left: 160px; border-color: #8b5cf6; }
-.tabela_categorias { top: 390px; left: 500px; border-color: #f97316; }
+.tabela_posts {
+    top: 80px;
+    left: 500px;
+}
 
+.tabela_comentarios {
+    top: 320px;
+    left: 160px;
+}
 
+.tabela_categorias {
+    top: 390px;
+    left: 500px;
+}
+
+/* CABEÇALHOS DAS TABELAS */
 [class^="t_tabela_"] {
+    background-color: #1769FF;
+
     padding: 10px 14px;
+
     display: flex;
     align-items: center;
     gap: 10px;
@@ -221,7 +272,7 @@ body {
 [class^="t_tabela_"] h3 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #FFFFFF;
     margin-right: auto;
 }
 
@@ -229,24 +280,21 @@ body {
     font-size: 0.9rem;
 }
 
-.t_tabela_usuario { background-color: #2563eb; }
-.t_tabela_posts { background-color: #10b981; }
-.t_tabela_comentarios { background-color: #8b5cf6; }
-.t_tabela_categorias { background-color: #f97316; }
-
+/* BOTÃO EXCLUIR TABELA */
 .b_excluir_tabela {
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.7);
+
     cursor: pointer;
     font-size: 0.8rem;
 }
 
 .b_excluir_tabela:hover {
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
-/* Listagem dos Campos */
+/* LISTAGEM DOS CAMPOS */
 .mesa ul {
     list-style: none;
     padding: 6px 0;
@@ -255,26 +303,31 @@ body {
 .mesa li {
     display: flex;
     align-items: center;
+
     padding: 8px 14px;
     font-size: 0.78rem;
     gap: 8px;
 }
 
 .nome_campo {
-    color: #e2e8f0;
+    color: #F5F7FF;
     margin-right: auto;
 }
 
 .tipo_dado {
-    color: #64748b;
+    color: #B9D0F2;
     font-size: 0.72rem;
     font-family: 'Fira Code', monospace;
 }
 
-/* Badges PK, FK e UNIQUE */
+/* MARCAÇÕES PK, FK E UNIQUE */
 .marcacao {
+    background-color: #104C91;
+    color: #FFFFFF;
+
     font-size: 0.62rem;
     font-weight: 700;
+
     padding: 2px 6px;
     border-radius: 4px;
     text-transform: uppercase;
@@ -284,27 +337,17 @@ body {
     display: none;
 }
 
-
-.tabela_usuario .marcacao { background-color: #1d4ed8; color: #ffffff; }
-.tabela_usuario li:has(.marcacao:contains("UNIQUE")) .marcacao,
-.marcacao:contains("UNIQUE") { background-color: #7c3aed; color: #ffffff; }
-
-.tabela_posts .marcacao { background-color: #059669; color: #ffffff; }
-.tabela_comentarios .marcacao { background-color: #059669; color: #ffffff; }
-.tabela_comentarios li:first-child .marcacao { background-color: #2563eb; }
-
-.tabela_categorias .marcacao { background-color: #2563eb; color: #ffffff; }
-
 .mesa li .fa-key {
-    color: #eab308;
+    color: yellow;
     font-size: 0.75rem;
 }
 
-
+/* BARRA LATERAL DIREITA */
 .barra_direita {
     grid-area: scriptbar;
-    background-color: #070f26;
-    border-left: 1px solid #111e38;
+    background-color: #031D3B;
+    border-left: 1px solid #104C91;
+
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -314,40 +357,50 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #f8fafc;
+    color: #F5F7FF;
 }
 
+/* CAMPO DO SCRIPT SQL */
 .campo_script {
-    background-color: #030816;
-    border: 1px solid #111e38;
+    background-color: #00152F;
+    border: 1px solid #104C91;
     border-radius: 8px;
+
     flex: 1;
     position: relative;
+
     padding: 16px;
     margin-top: 10px;
+
     font-family: 'Fira Code', monospace;
     font-size: 0.75rem;
-    color: #94a3b8;
+    color: #B9D0F2;
+
     overflow-y: auto;
 }
 
+/* BOTÃO COPIAR */
 .botao_copiar {
     position: absolute;
     top: 12px;
     right: 12px;
-    background-color: #0d1b3a;
-    color: #94a3b8;
-    border: 1px solid #1e293b;
+
+    background-color: #062650;
+    color: #B9D0F2;
+    border: 1px solid #104C91;
+
     padding: 5px 10px;
     border-radius: 4px;
+
     cursor: pointer;
     font-size: 0.72rem;
+
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
 .botao_copiar:hover {
-    color: #ffffff;
-    background-color: #172a54;
+    color: #FFFFFF;
+    background-color: #104C91;
 }
