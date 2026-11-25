@@ -4,7 +4,7 @@ const nome_armazenamento = "meus_diagramas";
 // 1. RECUPERAÇÃO DE PROJETOS
 function buscarProjetos() {
     const informacoes = localStorage.getItem(nome_armazenamento);
-    return informacoes ? JSON.parse(informacoes) : []; // Corrigido de projetoRecuperado para informacoes
+    return informacoes ? JSON.parse(informacoes) : []; 
 }
 
 // 2. SALVAMENTO DE PROJETOS
@@ -74,7 +74,7 @@ function apagarProjeto(idDoProjeto) {
         return false;
     }
 
-    saveTabela(projetosFiltrados); // Corrigido de saveTable para saveTabela
+    saveTabela(projetosFiltrados); 
     return true;
 }
 
