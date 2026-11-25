@@ -1,104 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/editor.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <title>Editor</title>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="css/editor.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+   <title>Editor</title>
 </head>
-
 <body>
-
-    <div class="barra_superior">
-
-        <h1 class="titulo">
-            <i class="fa-solid fa-database" aria-hidden="true"></i>
-            Diagramador <b>ER</b>
+  
+   <div class="barra_superior">
+       <h1></h1><i class="fa-solid fa-database" aria-hidden="true"></i>
+                    Diagramador <b>ER</b>
         </h1>
-
-        <h3 class="sub_titulo">Desenhe seu banco de dados de forma visual.</h3>
-
-        <button type="button" class="b_inicio" onclick="window.location.href='index.html'">
-            <i class="fa-solid fa-house"></i>
-            Início
-        </button>
-
-        <button type="button" class="b_desfazer">
-            <i class="fa-solid fa-rotate-left"></i>Desfazer
-        </button>
-
-        <button type="button" class="b_refazer">
-            <i class="fa-solid fa-rotate-right"></i>Refazer
-        </button>
-
-        <button type="button" class="gerar_sql">
-            <i class="fa-solid fa-code"></i>Gerar SQL
-        </button>
-
-        <button type="button" class="b_configuracoes">
-            <i class="fa-solid fa-gear"></i>
-        </button>
-
-    </div>
+       <h3 class="sub_titulo">Desenhe seu banco de dados de forma visual.</h3>
 
 
-    <div class="barra_esquerda">
-
-        <div class="ferramentas">
-
-            <p class="t_principal_1">Ferramentas</p>
-
-            <button type="button" class="ad_tabelas">
-                <i class="fa-solid fa-plus"></i>Adicionar Tabelas
-            </button>
-
-            <div class="relacoes">
-
-                <button type="button" class="relacao_1p1">Relação 1:1</button>
-
-                <button type="button" class="relacao_1pN">Relação 1:N</button>
-
-                <button type="button" class="relacao_NpM">Relação N:M</button>
-
-            </div>
-
-        </div>
+       <button type="button" class="b_desfazer"><i class="fa-solid fa-rotate-left"></i>Desfazer</button>
+       <button type="button" class="b_refazer"><i class="fa-solid fa-rotate-right"></i>Refazer</button>
+       <button type="button" class="gerar_sql"><i class="fa-solid fa-code"></i>Gerar SQL</button>
+       <button type="button" class="b_configuracoes"><i class="fa-solid fa-gear"></i></button>
+   </div>
 
 
-        <div class="acoes">
-
-            <p class="t_principal_2">Ações</p>
-
-            <div class="b_acoes">
-
-                <button type="button" class="selecionar">
-                    <i class="fa-solid fa-mouse-pointer"></i>Selecionar
-                </button>
-
-                <button type="button" class="mover">
-                    <i class="fa-solid fa-up-down-left-right"></i>Mover
-                </button>
-
-                <button type="button" class="excluir">
-                    <i class="fa-solid fa-trash-can"></i>Excluir
-                </button>
-
-            </div>
-
-        </div>
+   <div class="barra_esquerda">
+       <div class="ferramentas">
+           <p class="t_principal_1">Ferramentas</p>
+           <button type="button" class="ad_tabelas"><i class="fa-solid fa-plus"></i>Adicionar Tabelas</button>
 
 
-        <div class="dica">
+           <div class="relacoes">
+               <button type= "button" class="relacao_1p1">Relação 1:1</button>
+               <button type="button"  class="relacao_1pN">Relação 1:N</button>
+               <button type="button" class="relacao_NpM">Relação N:M</button>
+           </div>
+       </div>
+      
+       <div class="acoes">
+           <p class="t_principal_2">Ações</p>
+           <div class="b_acoes">
+               <button type="button" class="selecionar"><i class="fa-solid fa-mouse-pointer"></i>Selecionar</button>
+               <button type="button" class="mover"><i class="fa-solid fa-up-down-left-right"></i>Mover</button>
+               <button type="button" class="excluir"><i class="fa-solid fa-trash-can"></i>Excluir</button>
+           </div>
+       </div>
 
+
+       <div class="dica">
             <h3>Dica</h3>
+           <p>Arraste as tabelas pela tela e conecte os campos para criar relações. Depois clique em "Gerar SQL" para obter o script</p>
+       </div>
+   </div>
 
-            <p>
-                Arraste as tabelas pela tela e conecte os campos para criar relações.
-                Depois clique em "Gerar SQL" para obter o script.
-            </p>
 
    <div class="barra_direita">
        <p class="t_principal_2">Script SQL</p>
@@ -116,6 +69,7 @@
 
     <script src="js/armazenamento.js"></script>
     <script src="js/tabelas.js"></script>
+
 
 </body>
 </html>
