@@ -10,14 +10,15 @@
 <body>
   
    <div class="barra_superior">
-       <h1></h1><i class="fa-solid fa-database" aria-hidden="true"></i>
-                    Diagramador <b>ER</b>
+
+        <h1 class="titulo">
+            <i class="fa-solid fa-database" aria-hidden="true"></i>
+            Diagramador <b>ER</b>
         </h1>
        <h3 class="sub_titulo">Desenhe seu banco de dados de forma visual.</h3>
 
 
-       <button type="button" class="b_desfazer"><i class="fa-solid fa-rotate-left"></i>Desfazer</button>
-       <button type="button" class="b_refazer"><i class="fa-solid fa-rotate-right"></i>Refazer</button>
+       <button type="button" class="b_inicio" onclick="window.location.href='index.html'"><i class="fa-solid fa-house"></i>Início</button>
        <button type="button" class="gerar_sql"><i class="fa-solid fa-code"></i>Gerar SQL</button>
        <button type="button" class="b_configuracoes"><i class="fa-solid fa-gear"></i></button>
    </div>
@@ -30,18 +31,18 @@
 
 
            <div class="relacoes">
-               <button type= "button" class="relacao_1p1">Relação 1:1</button>
-               <button type="button"  class="relacao_1pN">Relação 1:N</button>
-               <button type="button" class="relacao_NpM">Relação N:M</button>
+               <button type= "button" class="relacao_1p1"><i class="fa-solid fa-square" id="cor1_1"></i>Relação 1:1</button>
+               <button type="button"  class="relacao_1pN"><i class="fa-solid fa-square" id="cor1_N"></i>Relação 1:N</button>
+               <button type="button" class="relacao_NpM"><i class="fa-solid fa-square" id="corN_N"></i>Relação N:N</button>
            </div>
        </div>
       
        <div class="acoes">
            <p class="t_principal_2">Ações</p>
            <div class="b_acoes">
-               <button type="button" class="selecionar"><i class="fa-solid fa-mouse-pointer"></i>Selecionar</button>
-               <button type="button" class="mover"><i class="fa-solid fa-up-down-left-right"></i>Mover</button>
-               <button type="button" class="excluir"><i class="fa-solid fa-trash-can"></i>Excluir</button>
+               <button type="button" class="selecionar"><i class="fa-solid fa-mouse-pointer" id="iconEsquerda"></i>Selecionar</button>
+               <button type="button" class="mover"><i class="fa-solid fa-up-down-left-right" id="iconEsquerda"></i>Mover</button>
+               <button type="button" class="excluir"><i class="fa-solid fa-trash-can" id="iconEsquerda"></i>Excluir</button>
            </div>
        </div>
 
@@ -61,15 +62,12 @@
        </div>
    </div>
 
-
    <div class="mesa"></div>
-
 
     </div>
 
     <script src="js/armazenamento.js"></script>
     <script src="js/tabelas.js"></script>
-    <scrip src="js/relacionamentos.js"></scrip>
 
 
 </body>

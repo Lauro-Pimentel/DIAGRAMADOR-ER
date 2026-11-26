@@ -1,17 +1,3 @@
-
-/*
- * Módulo de Relacionamentos
- * Responsável por criar, desenhar e remover conexões entre tabelas.
- *
- * Dependências disponibilizadas por tabelas.js:
- * - mesa
- * - projetoAtual
- * - modoAtual
- * - definirModo()
- * - salvarAlteracoes()
- * - renderizarTudo()
- */
-
 const Relacionamentos = (() => {
     // Estado interno do módulo.
     let tabelaOrigemRelacao = null;

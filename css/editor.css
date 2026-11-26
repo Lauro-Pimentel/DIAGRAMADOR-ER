@@ -126,12 +126,34 @@ body {
     flex-direction: column;
 }
 
+#cor1_1 {
+    color: #3b82f6;
+    font-size: 1.2rem;
+}
+
+#cor1_N {
+    color: #10b981;
+    font-size: 1.2rem;
+
+}
+
+#corN_N {
+    color: #a855f7;
+    font-size: 1.2rem;
+
+}
+
+
 .relacoes,
 .b_acoes {
     display: flex;
     flex-direction: column;
     gap: 6px;
     margin-top: 10px;
+}
+
+#iconEsquerda {
+    font-size: 1rem;
 }
 
 /* BOTÕES DA BARRA ESQUERDA */
@@ -235,27 +257,6 @@ body {
     border: 2px solid #104C91;
 
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.35);
-}
-
-/* POSICIONAMENTO DAS TABELAS DE EXEMPLO */
-.tabela_usuario {
-    top: 60px;
-    left: 100px;
-}
-
-.tabela_posts {
-    top: 80px;
-    left: 500px;
-}
-
-.tabela_comentarios {
-    top: 320px;
-    left: 160px;
-}
-
-.tabela_categorias {
-    top: 390px;
-    left: 500px;
 }
 
 /* CABEÇALHOS DAS TABELAS */
