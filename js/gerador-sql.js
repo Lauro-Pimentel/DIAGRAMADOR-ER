@@ -1,4 +1,3 @@
-
 const GeradorSQL = (() => {
 
     // Gera o código SQL a partir dos dados do projeto.
