@@ -260,6 +260,7 @@ function renderizarTabelas() {
                 >
                     <i class="fa-solid fa-palette"></i>
                 </button>
+<<<<<<< Updated upstream
 
                 <button
                     type="button"
@@ -277,6 +278,10 @@ function renderizarTabelas() {
                     X
                 </button>
 
+=======
+                <button type="button" class="b_add_atributo" title="Adicionar coluna"><i class="fa-solid fa-circle-plus"></i></button>
+                <button type="button" class="b_excluir_tabela" title="Excluir tabela">X</button>
+>>>>>>> Stashed changes
             </div>
         `;
 

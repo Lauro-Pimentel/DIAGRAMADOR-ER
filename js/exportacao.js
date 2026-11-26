@@ -1,4 +1,3 @@
-
 function exportarJSON(dados) {
     // Converte os dados do projeto para JSON
     const dadosConvertidos = JSON.stringify(dados);

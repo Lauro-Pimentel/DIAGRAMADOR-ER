@@ -405,3 +405,9 @@ body {
     color: #FFFFFF;
     background-color: #104C91;
 }
+
+.b_add_atributo {
+    background: none;
+    border: none;
+    color: white;
+}

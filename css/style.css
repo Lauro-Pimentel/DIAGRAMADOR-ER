@@ -109,47 +109,6 @@ body {
     pointer-events: none;
 }
 
-
-/* BOTÃO DE UPLOAD */
-
-.botao_upload {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.botao_upload button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    min-height: 46px;
-    padding: 0 20px;
-
-    border: none;
-    border-radius: 10px;
-
-    background-color: #1769FF;
-    color: #FFFFFF;
-
-    font-size: 0.9rem;
-    font-weight: 600;
-    white-space: nowrap;
-
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.botao_upload button:hover {
-    background-color: #2678FF;
-    transform: translateY(-2px);
-}
-
-.botao_upload button i {
-    font-size: 1.1rem;
-}
-
-
 /* SEÇÃO DE APRESENTAÇÃO */
 
 .secao_apresentacao {
