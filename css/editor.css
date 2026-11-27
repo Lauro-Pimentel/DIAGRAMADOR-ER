@@ -93,10 +93,6 @@ body {
     background-color: #2678FF;
 }
 
-.b_configuracoes {
-    padding: 8px 10px !important;
-}
-
 /* BARRA LATERAL ESQUERDA */
 .barra_esquerda {
     grid-area: sidebar;

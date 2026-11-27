@@ -1,4 +1,3 @@
-
 // ======================================================
 // 1. SELETORES DOS ELEMENTOS DO HTML
 // ======================================================
@@ -548,6 +547,7 @@ function trocarCorTabela(idTabela) {
 }
 
 
+
 // ======================================================
 // 10. MOVIMENTAÇÃO DO MOUSE
 // ======================================================
@@ -558,14 +558,30 @@ document.addEventListener("mousemove", (e) => {
 
     const rectMesa = mesa.getBoundingClientRect();
 
+    // Calcula a nova posição da tabela
     let novoX =
         e.clientX - rectMesa.left - offsetX + mesa.scrollLeft;
 
     let novoY =
         e.clientY - rectMesa.top - offsetY + mesa.scrollTop;
 
-    novoX = Math.max(10, novoX);
-    novoY = Math.max(10, novoY);
+    // Obtém as dimensões da mesa e da tabela
+    const larguraMesa = mesa.clientWidth;
+    const alturaMesa = mesa.clientHeight;
+
+    const larguraTabela = tabelaArrastando.offsetWidth;
+    const alturaTabela = tabelaArrastando.offsetHeight;
+
+    // Impede que a tabela ultrapasse os limites da mesa
+    novoX = Math.max(
+        0,
+        Math.min(novoX, larguraMesa - larguraTabela)
+    );
+
+    novoY = Math.max(
+        0,
+        Math.min(novoY, alturaMesa - alturaTabela)
+    );
 
     // Atualiza a posição visual
     tabelaArrastando.style.left = `${novoX}px`;
@@ -579,7 +595,6 @@ document.addEventListener("mousemove", (e) => {
     Relacionamentos.desenharRelacoes();
 
 });
-
 
 // ======================================================
 // 11. FINALIZAR MOVIMENTAÇÃO
