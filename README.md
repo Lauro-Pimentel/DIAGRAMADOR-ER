@@ -16,3 +16,11 @@ O **Diagramador ER** é uma ferramenta web desenvolvida para facilitar a criaç�
 * **HTML5** — estrutura das páginas e elementos da interface.
 * **CSS3** — estilização, tema escuro e organização visual do editor.
 * **JavaScript** — lógica de manipulação das tabelas, conexões e geração do código SQL.
+
+## Autores
+
+Projeto desenvolvido por:
+
+* **Lauro Pimentel** — [@Lauro-Pimentel](https://github.com)
+* **Felipe de Oliveira Santos** — [@Gunter357](https://github.com)
+* **Gabessx** — [@Gabessx](https://github.com)
