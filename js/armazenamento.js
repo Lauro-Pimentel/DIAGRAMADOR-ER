@@ -1,3 +1,5 @@
+// © 2026 | Todos os direitos reservados — Lauro Pimentel (@Lauro-Pimentel), Felipe de Oliveira Santos (@Gunter357) e Gabessx (@Gabessx).
+
 // GERENCIADOR DE ARMAZENAMENTO DE DIAGRAMAS
 const nome_armazenamento = "meus_diagramas";
 

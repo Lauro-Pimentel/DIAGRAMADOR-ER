@@ -1,3 +1,5 @@
+// © 2026 | Todos os direitos reservados — Lauro Pimentel (@Lauro-Pimentel), Felipe de Oliveira Santos (@Gunter357) e Gabessx (@Gabessx).
+
 const GeradorSQL = (() => {
 
     // Gera o código SQL a partir dos dados do projeto.

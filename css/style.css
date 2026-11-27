@@ -1,3 +1,4 @@
+/* © 2026 | Todos os direitos reservados — Lauro Pimentel (@Lauro-Pimentel), Felipe de Oliveira Santos (@Gunter357) e Gabessx (@Gabessx).
 
 /* CONFIGURAÇÃO GLOBAL */
 
@@ -373,74 +374,4 @@ body {
 
 .informacoes_finais i {
     font-size: 20px;
-}
-
-/* RESPONSIVIDADE */
-
-@media (max-width: 900px) {
-    .barra_superior {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-
-    .barra_pesquisa {
-        grid-column: 1 / -1;
-        grid-row: 2;
-    }
-
-    .botao_upload {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .galeria_projetos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 600px) {
-    .barra_superior {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 20px;
-    }
-
-    .nome_app {
-        justify-content: center;
-    }
-
-    .botao_upload button {
-        width: 100%;
-    }
-
-    .secao_apresentacao {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 6%;
-    }
-
-    .texto_apresentacao h2 {
-        font-size: 1.8rem;
-    }
-
-    .texto_apresentacao p {
-        font-size: 0.95rem;
-    }
-
-    .imagem_apresentacao {
-        width: 100%;
-    }
-
-    .imagem_apresentacao img {
-        max-width: 280px;
-    }
-
-    .parte_inferior {
-        padding: 30px 6%;
-    }
-
-    .galeria_projetos {
-        grid-template-columns: 1fr;
-    }
 }

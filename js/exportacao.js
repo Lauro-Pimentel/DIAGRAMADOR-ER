@@ -1,3 +1,5 @@
+// © 2026 | Todos os direitos reservados — Lauro Pimentel (@Lauro-Pimentel), Felipe de Oliveira Santos (@Gunter357) e Gabessx (@Gabessx).
+
 function exportarJSON(dados) {
     // Converte os dados do projeto para JSON
     const dadosConvertidos = JSON.stringify(dados);
