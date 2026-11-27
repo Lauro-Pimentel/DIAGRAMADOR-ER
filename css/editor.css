@@ -411,3 +411,44 @@ body {
     border: none;
     color: white;
 }
+
+/* Área de visualização do SQL */
+.campo_script {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Código SQL gerado */
+.sql_resultado {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #B9D0F2;
+    margin-top: 15px;
+}
+
+/* Botão de download */
+.botao_baixar {
+    display: block;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 15px;
+    padding: 8px 14px;
+    background-color: #1769FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.botao_baixar:hover {
+    background-color: #0B50CC;
+}
+
+#mensagemSQL {
+    font-size: 0.8rem;
+}

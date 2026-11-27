@@ -97,6 +97,82 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ======================================================
+// GERAR E BAIXAR SQL
+// ======================================================
+
+const btnGerarSQL = document.querySelector(".gerar_sql");
+const campoScript = document.querySelector(".campo_script");
+
+let ultimoSQLGerado = "";
+
+if (btnGerarSQL && campoScript) {
+
+    btnGerarSQL.addEventListener("click", () => {
+
+        // Busca as tabelas do projeto atual
+        const tabelas = projetoAtual.dados.nodes;
+
+        if (tabelas.length === 0) {
+            alert("Adicione pelo menos uma tabela!");
+            return;
+        }
+
+        // Gera o SQL
+        ultimoSQLGerado = exportarSQL(tabelas);
+
+        // Exibe o resultado
+        let resultado = campoScript.querySelector(".sql_resultado");
+
+        if (!resultado) {
+            resultado = document.createElement("pre");
+            resultado.className = "sql_resultado";
+            campoScript.appendChild(resultado);
+        }
+
+        resultado.textContent = ultimoSQLGerado;
+
+        // Mostra o botão de download
+        let btnBaixar = campoScript.querySelector(".botao_baixar");
+
+        if (!btnBaixar) {
+
+            btnBaixar = document.createElement("button");
+
+            btnBaixar.type = "button";
+            btnBaixar.className = "botao_baixar";
+            btnBaixar.textContent = "Baixar SQL";
+
+            campoScript.appendChild(btnBaixar);
+
+            btnBaixar.addEventListener("click", () => {
+                baixarSQL(ultimoSQLGerado);
+            });
+
+        }
+
+        btnBaixar.hidden = false;
+
+    });
+
+}
+
+// Configura o botão de copiar SQL
+const botaoCopiar = document.querySelector(".botao_copiar");
+
+if (botaoCopiar) {
+    botaoCopiar.addEventListener("click", () => {
+
+        if (!ultimoSQLGerado.trim()) {
+            alert("Não há conteúdo SQL para copiar!");
+            return;
+        }
+
+        copiarSQL(ultimoSQLGerado);
+
+    });
+}
+
+// ======================================================
 // 4. CONFIGURAR BOTÕES DA BARRA ESQUERDA
 // ======================================================
 

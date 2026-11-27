@@ -25,28 +25,43 @@ function exportarJSON(dados) {
 }
 
 // Gera o código SQL a partir das tabelas
+
 function exportarSQL(tabelas) {
+
     let sql = "";
 
-    // Percorre todas as tabelas
     tabelas.forEach(tabela => {
-        sql += "CREATE TABLE " + tabela.nome + " (\n";
 
-        // Percorre as colunas de cada tabela
-        tabela.colunas.forEach((coluna, indice) => {
+        sql += `CREATE TABLE ${tabela.nome} (\n`;
 
-            // Verifica se é a última coluna
-            if (indice === tabela.colunas.length - 1) {
-                sql += coluna.nome + " " + coluna.tipo + " \n";
+        const definicoes = [];
+        const chavesPrimarias = [];
 
-            } else {
-                sql += coluna.nome + " " + coluna.tipo + ", \n";
+        tabela.atributos.forEach(atributo => {
 
+            let coluna = `${atributo.nome} ${atributo.tipo}`;
+
+            if (atributo.marcacao === "PK") {
+                chavesPrimarias.push(atributo.nome);
             }
+
+            if (atributo.marcacao === "UNIQUE") {
+                coluna += " UNIQUE";
+            }
+
+            definicoes.push(coluna);
+
         });
 
-        // Finaliza a instrução CREATE TABLE
-        sql += ");\n\n";
+        if (chavesPrimarias.length > 0) {
+            definicoes.push(
+                `PRIMARY KEY (${chavesPrimarias.join(", ")})`
+            );
+        }
+
+        sql += "    " + definicoes.join(",\n    ");
+
+        sql += "\n);\n\n";
 
     });
 
@@ -54,36 +69,42 @@ function exportarSQL(tabelas) {
 }
 
 // Cria e baixa o arquivo SQL
+
 function baixarSQL(sql) {
-    const arquivoSQL = new Blob([sql], {
-        type: "text/sql"
+
+    const arquivo = new Blob([sql], {
+        type: "text/sql;charset=utf-8"
     });
 
-    // Cria uma URL temporária para o arquivo
-    const url = URL.createObjectURL(arquivoSQL);
+    const url = URL.createObjectURL(arquivo);
 
-    // Cria o link para baixar o arquivo
     const link = document.createElement("a");
+
     link.href = url;
-    link.download = "Projeto.sql";
+    link.download = "diagrama.sql";
+
     document.body.appendChild(link);
 
-    // Inicia o download
     link.click();
 
-    // Remove o link e libera a URL temporária
     document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+    }, 1000);
+
 }
+
 
 // Copia o código SQL para a área de transferência
 async function copiarSQL(sql) {
     try {
         await navigator.clipboard.writeText(sql);
-        console.log("SQL copiado com sucesso!");
+        alert("Conteúdo copiado com sucesso!");
 
     } catch (erro) {
         console.log("Erro ao copiar SQL:", erro);
+        alert("Não foi possível copiar o conteúdo.");
     }
 }
 
